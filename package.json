@@ -1,0 +1,10 @@
+{
+  "name": "wy-webpack",
+  "version": "1.0.0",
+  "description": "my own webpack",
+  "main": "index.js",
+  "repository": "https://github.com/wy2008826/wy-webpack.git",
+  "author": "wy2008826 <wy1479285>",
+  "license": "MIT",
+  "bin":"./bin/index.js"
+}
