@@ -1,7 +1,5 @@
-#! /usr/local/opt/node
+#! /usr/local/opt node
 
-
-const name = 'my-webpack';
+const name = 'my-webpack-bin';
 console.log(name);
-
-modeule.exports = name;
+module.exports = name;
