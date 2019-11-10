@@ -1,5 +1,5 @@
 {
-  "name": "wy-webpack",
+  "name": "my-webpack",
   "version": "1.0.0",
   "description": "my own webpack",
   "main": "./index.js",
@@ -7,10 +7,11 @@
   "author": "wy2008826",
   "license": "MIT",
   "bin": {
-    "test-inquirer":"./bin/test-inquirer.js",
-    "wy-pack": "./bin/index.js"
+    "test-inquirer": "./bin/test-inquirer.js",
+    "my-pack": "./bin/my-webpack.js"
   },
   "dependencies": {
+    "commander": "^4.0.0",
     "inquirer": "^7.0.0"
   }
 }

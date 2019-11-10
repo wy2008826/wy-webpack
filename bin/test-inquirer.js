@@ -2,12 +2,26 @@
 
 // 命令行交互
 
-
+const program = require('commander');
 const Inquirer = require('inquirer');
 
-console.log('__dirname:',__dirname);
+console.log('__dirname:',__dirname,process.argv);
 
-// 收集用户输入
+
+// 命令行参数传递
+
+program
+  .version('0.1.0')
+  .option('-p, --peppers', 'Add peppers')
+  .option('-P, --pineapple', 'Add pineapple')
+  .option('-b, --bbq-sauce', 'Add bbq sauce')
+  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .parse(process.argv);
+
+
+//   console.log(program);
+
+// 收集用户交互输入
 
 /**
  * @param type:
