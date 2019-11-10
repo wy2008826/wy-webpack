@@ -7,6 +7,10 @@
   "author": "wy2008826",
   "license": "MIT",
   "bin": {
+    "test-inquirer":"./bin/test-inquirer.js",
     "wy-pack": "./bin/index.js"
+  },
+  "dependencies": {
+    "inquirer": "^7.0.0"
   }
 }
