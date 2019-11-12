@@ -5,7 +5,7 @@ const fs = require('fs');
 const program = require('commander');
 let cwd = process.cwd();
 
-
+const Compiler = require('./compiler');
 /**
  * 流程
  * 1、将命令行中的参数和webpack.config.js中的参数进行合并
@@ -31,9 +31,12 @@ const {
 } = program;
 
 // 读取webpack.config.js 文件的配置参数
-const allConfig = require(path.resolve(cwd,config || './webpack.config.js'))
+let allConfig = require(path.resolve(cwd,config || './webpack.config.js'))
 
-
+allConfig= {
+  ...allConfig,
+  cwd
+}
 
 /**
  *  将 命令行中的参数 和 webpack.config.js中的参数进行合并
@@ -49,6 +52,12 @@ if(mode && (mode === 'production' || mode === 'development')){
 
 
 console.log('config',allConfig);
+
+
+
+
+const compiler = new Compiler(allConfig);
+compiler.run();
 
 module.exports = {
 
