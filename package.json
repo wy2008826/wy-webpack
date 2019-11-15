@@ -8,15 +8,12 @@
   "license": "MIT",
   "bin": {
     "test-inquirer": "./bin/test-inquirer.js",
-    "my-pack": "./bin/my-webpack.js"
+    "my-pack": "./bin/my-webpack.js",
+    "page": "./bin/createPage.js"
   },
   "dependencies": {
-    "@babel/generator": "^7.7.2",
-    "@babel/parser": "^7.7.3",
-    "@babel/traverse": "^7.7.2",
-    "@babel/types": "^7.7.2",
-    "babylon": "^6.18.0",
     "commander": "^4.0.0",
+    "ejs": "^2.7.2",
     "inquirer": "^7.0.0"
   }
 }
