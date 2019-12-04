@@ -21,6 +21,24 @@ const cwd =process.cwd();
  *
  * **/
 
+//确保该命令在项目目录中运行
+const canUseProjects = ['goodme-book'];
+const packageDir = path.resolve(cwd,'./package.json');
+
+const packageFileIsExists = fs.existsSync(packageDir);
+if(packageFileIsExists){
+    const packageFile = fs.readFileSync(packageDir,'utf-8');
+    const projectName = JSON.parse(packageFile).name;
+    if(canUseProjects.indexOf(projectName) <0){
+        console.log(`请在以下项目中使用该命令：${canUseProjects.join('、')}`);
+        return;
+    }
+}else{
+    console.log(`请在以下项目中使用该命令：${canUseProjects.join('、')}`);
+    return;
+}
+
+
 
 Inquirer.prompt([
     {
@@ -66,7 +84,7 @@ Inquirer.prompt([
                     resolve(false);
                 }
                 if( hasModels.indexOf(val)>-1){
-                    console.log(' 名称已存在');
+                    console.log(' ：该model名称已存在，请更换其他名称');
                     resolve(false);
                 }
                 resolve(true)
@@ -151,7 +169,7 @@ Inquirer.prompt([
         },
         ..._answers
     }
-    console.log('answers:',answers);
+    console.log('页面配置参数如下:\n',JSON.stringify(answers,null,2));
 
     //页面
     const pageTtemplate = fs.readFileSync(path.resolve(cwd,'./src/createPage/EjsTmp/PageTemplate.ejs'),'utf-8');
@@ -164,7 +182,7 @@ Inquirer.prompt([
     fs.writeFileSync(path.resolve(cwd,`./src/models/_template/template.js`),modelResult,'utf-8')
 
 
-    console.log(`\n\n\n,model 和页面已经生成 \n,请将页面和model放在适当的路径下m,\n根据model配置，在config.js中添加接口配置，\n,配置router`);
+    console.log(`\n\nmodel 和页面已经生成并分别放置于 src/models/template  src/routes/template 目录下 \n根据model配置，在config.js中添加接口配置 \n,配置router`);
 });
 
 
