@@ -8,11 +8,13 @@
   "license": "MIT",
   "bin": {
     "test-inquirer": "./bin/test-inquirer.js",
-    "my-pack": "./bin/my-webpack.js"
+    "my-pack": "./bin/my-webpack.js",
+    "marktoast": "./bin/markdown-to-ast.js"
   },
   "dependencies": {
     "commander": "^4.0.0",
     "ejs": "^2.7.2",
-    "inquirer": "^7.0.0"
+    "inquirer": "^7.0.0",
+    "markdown-to-ast": "^6.0.3"
   }
 }
