@@ -8,8 +8,7 @@
   "license": "MIT",
   "bin": {
     "test-inquirer": "./bin/test-inquirer.js",
-    "my-pack": "./bin/my-webpack.js",
-    "page": "./bin/createPage.js"
+    "my-pack": "./bin/my-webpack.js"
   },
   "dependencies": {
     "commander": "^4.0.0",
